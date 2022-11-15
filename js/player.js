@@ -1,6 +1,6 @@
 import { deltaTime } from "./deltaTime.js";
 import { keysPressed } from "./movement.js";
-import { gameArea, checkColision } from "./gameArea.js";
+import { gameArea, checkColision, walls } from "./gameArea.js";
 
 export { player };
 
@@ -37,8 +37,8 @@ const player = {
       } else if (gameArea.x + deltaTime > this.x) {
         this.x = gameArea.x;
       }
+
       console.log(checkColision());
-      checkColision();
       // if (
       //   this.x + this.w <= walls[0].x + walls[0].w &&
       //   this.x <= walls[0].x + walls[0].w &&
@@ -58,14 +58,13 @@ const player = {
       } else if (gameArea.h - deltaTime < this.y) {
         this.y = gameArea.h;
       }
-
-      // if (
-      //   this.y + this.h >= walls[0].y &&
-      //   this.x + this.w <= walls[0].x + walls[0].w
-      // ) {
-      //   this.y = walls[0].y - this.h;
-      // } else {
-      //   console.log("x div: " + this.x + " wall x " + walls[0].x + walls[0].w);
+      console.log(checkColision());
+      // if (checkColision()) {
+      //   for (let i = 0; i < walls.length; i++) {
+      //     if (this.y + this.h >= walls[i].x) {
+      //       this.y = walls[i].x + this.h;
+      //     }
+      //   }
       // }
     },
     ArrowUp() {
@@ -78,6 +77,7 @@ const player = {
       } else if (gameArea.y + deltaTime > this.y) {
         this.y = gameArea.y;
       }
+      console.log(checkColision());
     },
     ArrowRight() {
       if (this.x + this.w < gameArea.w) {
@@ -89,6 +89,7 @@ const player = {
       } else if (gameArea.w - deltaTime < this.x + this.w) {
         this.x = gameArea.w - this.w;
       }
+      console.log(checkColision());
       //APLICAR COLISION
     },
   },

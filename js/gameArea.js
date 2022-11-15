@@ -1,6 +1,6 @@
 import { player } from "./player.js";
 
-export { gameArea, checkColision };
+export { gameArea, checkColision, walls };
 
 const gameArea = {
   el: document.querySelector("#gameArea"),
@@ -34,13 +34,16 @@ function checkColision() {
     leng = walls.length,
     result = false;
 
-  while (i > leng) {
+  while (i < leng) {
     if (!collision(player, walls[i])) {
-      i++;
-    } else {
       result = true;
+      i = leng;
+    } else {
+      i++;
+      result = false;
     }
   }
+
   return result;
 }
 
