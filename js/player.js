@@ -1,6 +1,6 @@
 import { deltaTime } from "./deltaTime.js";
 import { keysPressed } from "./movement.js";
-import { gameArea, walls } from "./gameArea.js";
+import { gameArea, checkColision } from "./gameArea.js";
 
 export { player };
 
@@ -22,9 +22,6 @@ const player = {
     this.el.style.top = player.y + "px";
   },
 
-
-
-
   /* Esta funcion son las aciones del player 
     move = clave
     ArrowX = valor
@@ -40,15 +37,16 @@ const player = {
       } else if (gameArea.x + deltaTime > this.x) {
         this.x = gameArea.x;
       }
-
-      if (
-        this.x + this.w <=  walls[0].x + walls[0].w
-        this.x <= walls[0].x + walls[0].w &&
-        this.y + this.h <= walls[0].y + walls[0].h
-      ) {
-        console.log("hit");
-        this.x = walls[0].x + walls[0].w;
-      }
+      console.log(checkColision());
+      checkColision();
+      // if (
+      //   this.x + this.w <= walls[0].x + walls[0].w &&
+      //   this.x <= walls[0].x + walls[0].w &&
+      //   this.y + this.h <= walls[0].y + walls[0].h
+      // ) {
+      //   console.log("hit");
+      //   this.x = walls[0].x + walls[0].w;
+      // }
     },
     ArrowDown() {
       if (this.y + this.h < gameArea.h) {
@@ -61,14 +59,14 @@ const player = {
         this.y = gameArea.h;
       }
 
-      if (
-        this.y + this.h >= walls[0].y &&
-        this.x + this.w <= walls[0].x + walls[0].w
-      ) {
-        this.y = walls[0].y - this.h;
-      } else {
-        console.log("x div: " + this.x + " wall x " + walls[0].x + walls[0].w);
-      }
+      // if (
+      //   this.y + this.h >= walls[0].y &&
+      //   this.x + this.w <= walls[0].x + walls[0].w
+      // ) {
+      //   this.y = walls[0].y - this.h;
+      // } else {
+      //   console.log("x div: " + this.x + " wall x " + walls[0].x + walls[0].w);
+      // }
     },
     ArrowUp() {
       if (this.y > gameArea.y) {
@@ -91,6 +89,7 @@ const player = {
       } else if (gameArea.w - deltaTime < this.x + this.w) {
         this.x = gameArea.w - this.w;
       }
+      //APLICAR COLISION
     },
   },
 

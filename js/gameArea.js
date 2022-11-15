@@ -1,6 +1,6 @@
 import { player } from "./player.js";
 
-export { gameArea, walls };
+export { gameArea, checkColision };
 
 const gameArea = {
   el: document.querySelector("#gameArea"),
@@ -28,5 +28,26 @@ walls.forEach((item) => {
   div.style.backgroundColor = "#646a63";
   gameArea.el.appendChild(div);
 });
+
+function checkColision() {
+  var i = 0,
+    leng = walls.length,
+    result = false;
+
+  while (i > leng) {
+    if (!collision(player, walls[i])) {
+      i++;
+    } else {
+      result = true;
+    }
+  }
+  return result;
+}
+
+function collision(a, b) {
+  return (
+    a.y + a.w <= b.y || a.y >= b.y + b.h || a.x + a.w <= b.x || a.x >= b.x + b.w
+  );
+}
 
 // https://www.youtube.com/watch?v=TZsf1zlDRic
