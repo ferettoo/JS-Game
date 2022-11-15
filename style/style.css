@@ -1,0 +1,41 @@
+html {
+    box-sizing: border-box;
+    /* Suma los valores de height, margin o border al objeto*/
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #788DA9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#gameArea {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: aliceblue;
+}
+
+#player {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #7953d2;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#colision {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #d25353;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
