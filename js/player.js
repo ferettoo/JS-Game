@@ -1,6 +1,6 @@
 import { deltaTime } from "./deltaTime.js";
 import { keysPressed } from "./movement.js";
-import { gameArea, checkColision, walls } from "./gameArea.js";
+import { gameArea, collision, walls } from "./gameArea.js";
 
 export { player };
 
@@ -10,7 +10,7 @@ const player = {
   h: document.querySelector("#player").offsetHeight,
   x: 0,
   y: 0,
-  speed: 3,
+  speed: 1.5,
 
   /** MODIFICAR WIDHT HEIGHT */
   /** https://www.youtube.com/watch?v=TZsf1zlDRic */
@@ -38,7 +38,12 @@ const player = {
         this.x = gameArea.x;
       }
 
-      console.log(checkColision());
+      for (let i = 0; i < walls.length; i++) {
+        if (!collision(player, walls[i])) {
+          this.x = walls[i].x + walls[i].w;
+        }
+      }
+
       // if (
       //   this.x + this.w <= walls[0].x + walls[0].w &&
       //   this.x <= walls[0].x + walls[0].w &&
@@ -58,7 +63,13 @@ const player = {
       } else if (gameArea.h - deltaTime < this.y) {
         this.y = gameArea.h;
       }
-      console.log(checkColision());
+
+      for (let i = 0; i < walls.length; i++) {
+        if (!collision(player, walls[i])) {
+          this.y = walls[i].y - this.h;
+        }
+      }
+
       // if (checkColision()) {
       //   for (let i = 0; i < walls.length; i++) {
       //     if (this.y + this.h >= walls[i].x) {
@@ -77,7 +88,12 @@ const player = {
       } else if (gameArea.y + deltaTime > this.y) {
         this.y = gameArea.y;
       }
-      console.log(checkColision());
+
+      for (let i = 0; i < walls.length; i++) {
+        if (!collision(player, walls[i])) {
+          this.y = walls[i].y + walls[i].h;
+        }
+      }
     },
     ArrowRight() {
       if (this.x + this.w < gameArea.w) {
@@ -89,8 +105,12 @@ const player = {
       } else if (gameArea.w - deltaTime < this.x + this.w) {
         this.x = gameArea.w - this.w;
       }
-      console.log(checkColision());
-      //APLICAR COLISION
+
+      for (let i = 0; i < walls.length; i++) {
+        if (!collision(player, walls[i])) {
+          this.x = walls[i].x - this.w;
+        }
+      }
     },
   },
 

@@ -1,6 +1,6 @@
 import { player } from "./player.js";
 
-export { gameArea, checkColision, walls };
+export { gameArea, collision, walls };
 
 const gameArea = {
   el: document.querySelector("#gameArea"),
@@ -15,6 +15,7 @@ let walls = [
   { x: 50, y: 125, w: 170, h: 20 },
   { x: 200, y: 0, w: 20, h: 125 },
   { x: 0, y: 200, w: 145, h: 20 },
+  { x: 200, y: 200, w: 100, h: 20 },
 ];
 
 //Añade en gameArea las pad
@@ -29,27 +30,9 @@ walls.forEach((item) => {
   gameArea.el.appendChild(div);
 });
 
-function checkColision() {
-  var i = 0,
-    leng = walls.length,
-    result = false;
-
-  while (i < leng) {
-    if (!collision(player, walls[i])) {
-      result = true;
-      i = leng;
-    } else {
-      i++;
-      result = false;
-    }
-  }
-
-  return result;
-}
-
 function collision(a, b) {
   return (
-    a.y + a.w <= b.y || a.y >= b.y + b.h || a.x + a.w <= b.x || a.x >= b.x + b.w
+    a.y + a.h <= b.y || a.y >= b.y + b.h || a.x + a.w <= b.x || a.x >= b.x + b.w
   );
 }
 
