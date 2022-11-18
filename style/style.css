@@ -19,8 +19,8 @@ body {
 
 #gameArea {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 610px;
     background-color: aliceblue;
 }
 

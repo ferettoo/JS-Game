@@ -10,7 +10,7 @@ const player = {
   h: document.querySelector("#player").offsetHeight,
   x: 0,
   y: 0,
-  speed: 1.5,
+  speed: 10,
 
   /** MODIFICAR WIDHT HEIGHT */
   /** https://www.youtube.com/watch?v=TZsf1zlDRic */
@@ -43,15 +43,6 @@ const player = {
           this.x = walls[i].x + walls[i].w;
         }
       }
-
-      // if (
-      //   this.x + this.w <= walls[0].x + walls[0].w &&
-      //   this.x <= walls[0].x + walls[0].w &&
-      //   this.y + this.h <= walls[0].y + walls[0].h
-      // ) {
-      //   console.log("hit");
-      //   this.x = walls[0].x + walls[0].w;
-      // }
     },
     ArrowDown() {
       if (this.y + this.h < gameArea.h) {
@@ -69,14 +60,6 @@ const player = {
           this.y = walls[i].y - this.h;
         }
       }
-
-      // if (checkColision()) {
-      //   for (let i = 0; i < walls.length; i++) {
-      //     if (this.y + this.h >= walls[i].x) {
-      //       this.y = walls[i].x + this.h;
-      //     }
-      //   }
-      // }
     },
     ArrowUp() {
       if (this.y > gameArea.y) {
