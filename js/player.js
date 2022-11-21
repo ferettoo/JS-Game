@@ -10,7 +10,7 @@ const player = {
   h: document.querySelector("#player").offsetHeight,
   x: 0,
   y: 0,
-  speed: 10,
+  speed: 2,
 
   /** MODIFICAR WIDHT HEIGHT */
   /** https://www.youtube.com/watch?v=TZsf1zlDRic */
@@ -109,9 +109,9 @@ const player = {
   },
 };
 
-/* Esta funcion pasara cada vez que movamos el player */
-/* Hacemos anonima la funcion para nos afectar el scope global(alcance de una 
-    variable en el codigo)*/
+/* Esta funcion pasara cada vez que movamos el player 
+   Hacemos anonima la funcion para nos afectar el scope global(alcance de una 
+   variable en el codigo)*/
 (function update() {
   /* Enviamos al ordenador que queremos hacer una animación y solicitamos
   que el navegador programe el repintado de la pagina para el proximo 
