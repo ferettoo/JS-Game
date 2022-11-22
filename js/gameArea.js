@@ -1,5 +1,5 @@
 import { player } from "./player.js";
-
+import { item } from "./trashItems.js";
 export { gameArea, collision, walls };
 
 const gameArea = {
@@ -61,4 +61,11 @@ function collision(a, b) {
   );
 }
 
-// https://www.youtube.com/watch?v=TZsf1zlDRic
+//Añade Items;
+
+item.forEach((items) => {
+  let newItem = document.createElement("div");
+  item.style.width = items.w + "vh";
+  item.style.height = items.h + "vh";
+  gameArea.el.appendChild(newItem);
+});
