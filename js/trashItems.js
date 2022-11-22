@@ -1,8 +1,6 @@
 // let item = document.createElement("div");
 
-export { item };
-
-const item = [{ x: 0, y: 0, w: 1, h: 1 }];
+// export { item };
 
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);

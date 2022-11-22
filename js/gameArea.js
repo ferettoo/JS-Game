@@ -1,5 +1,5 @@
 import { player } from "./player.js";
-import { item } from "./trashItems.js";
+// import { item } from "./trashItems.js";
 export { gameArea, collision, walls };
 
 const gameArea = {
@@ -62,10 +62,27 @@ function collision(a, b) {
 }
 
 //Añade Items;
+let trash = [
+  { x: 0, y: 0, w: 10, h: 10 },
+  { x: 0, y: 0, w: 10, h: 10 },
+  { x: 0, y: 0, w: 10, h: 10 },
+  { x: 0, y: 0, w: 10, h: 10 },
+  { x: 0, y: 0, w: 10, h: 10 },
+];
 
-item.forEach((items) => {
+trash.forEach((trash) => {
   let newItem = document.createElement("div");
-  item.style.width = items.w + "vh";
-  item.style.height = items.h + "vh";
+  newItem.style.left = getRandomArbitrary(0, gameArea.w) + "px";
+  newItem.style.top = getRandomArbitrary(0, 70) + "px";
+  newItem.style.width = trash.w + "px";
+  newItem.style.height = trash.h + "px";
+  newItem.style.position = "absolute";
+  newItem.style.backgroundColor = "red";
   gameArea.el.appendChild(newItem);
 });
+
+function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+console.log(getRandomArbitrary(gameArea.w, gameArea.h) + "px");
