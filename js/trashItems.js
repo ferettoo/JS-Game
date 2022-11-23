@@ -39,6 +39,7 @@ glass.forEach((trash) => {
   newItem.style.position = "absolute";
   newItem.style.backgroundColor = "green";
   gameArea.el.appendChild(newItem);
+  newItem.remove;
 });
 
 plastic.forEach((trash) => {
@@ -63,10 +64,9 @@ paper.forEach((trash) => {
   gameArea.el.appendChild(newItem);
 });
 
-let newBatterie;
-
+//Creo la basura en pantalla
 batteries.forEach((trash) => {
-  newBatterie = document.createElement("div");
+  let newBatterie = document.createElement("div");
   newBatterie.style.left = trash.x + "px";
   newBatterie.style.top = trash.y + "px";
   newBatterie.style.width = trash.w + "px";
@@ -78,11 +78,14 @@ batteries.forEach((trash) => {
 
 function hitTrash() {
   trash.forEach((x) => {
-    console.log(x);
     for (let i = 0; i < x.length; i++) {
       if (collision(player, x[i])) {
+        var elementDeleted = x.splice(i, 1);
+        elementDeleted.remove;
+
+        console.log(elementDeleted);
         //funcion de ganar puntos
-        //hacer desaparecer el cubo
+        //hacer desaparecer el div
       }
     }
   });
