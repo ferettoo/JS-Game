@@ -1,3 +1,1 @@
-const enemy = {
-    
-};
+const enemy = {};

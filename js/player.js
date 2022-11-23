@@ -1,8 +1,10 @@
 import { deltaTime } from "./deltaTime.js";
 import { keysPressed } from "./movement.js";
-import { gameArea, collision, walls } from "./gameArea.js";
+import { gameArea } from "./gameArea.js";
+import { walls } from "./walls.js";
+import { hitTrash } from "./trashItems.js";
 
-export { player };
+export { player, collision };
 
 const player = {
   el: document.querySelector("#player"),
@@ -12,20 +14,12 @@ const player = {
   y: 0,
   speed: 2,
 
-  /** MODIFICAR WIDHT HEIGHT */
-  /** https://www.youtube.com/watch?v=TZsf1zlDRic */
-  /* Esta funcion es para poder mover el player */
+  /* Cada vez que se mueve aplica esta funcion */
   render() {
-    /* mover izquierda, derecha */
     this.el.style.left = player.x + "px";
-    /* mover arriba y hacia abajo */
     this.el.style.top = player.y + "px";
   },
 
-  /* Esta funcion son las aciones del player 
-    move = clave
-    ArrowX = valor
-  */
   move: {
     ArrowLeft() {
       if (this.x > gameArea.x) {
@@ -39,10 +33,12 @@ const player = {
       }
 
       for (let i = 0; i < walls.length; i++) {
-        if (!collision(player, walls[i])) {
+        if (collision(player, walls[i])) {
           this.x = walls[i].x + walls[i].w;
         }
       }
+
+      hitTrash();
     },
     ArrowDown() {
       if (this.y + this.h < gameArea.h) {
@@ -56,10 +52,11 @@ const player = {
       }
 
       for (let i = 0; i < walls.length; i++) {
-        if (!collision(player, walls[i])) {
+        if (collision(player, walls[i])) {
           this.y = walls[i].y - this.h;
         }
       }
+      hitTrash();
     },
     ArrowUp() {
       if (this.y > gameArea.y) {
@@ -73,10 +70,12 @@ const player = {
       }
 
       for (let i = 0; i < walls.length; i++) {
-        if (!collision(player, walls[i])) {
+        if (collision(player, walls[i])) {
           this.y = walls[i].y + walls[i].h;
         }
       }
+
+      hitTrash();
     },
     ArrowRight() {
       if (this.x + this.w < gameArea.w) {
@@ -90,10 +89,11 @@ const player = {
       }
 
       for (let i = 0; i < walls.length; i++) {
-        if (!collision(player, walls[i])) {
+        if (collision(player, walls[i])) {
           this.x = walls[i].x - this.w;
         }
       }
+      hitTrash();
     },
   },
 
@@ -122,3 +122,14 @@ const player = {
   /*Le enviamos lo que queremos que modifique cada vez que nos movamos */
   player.render();
 })();
+
+//Colision Player con objetos del mapa
+function collision(a, b) {
+  //Devuelve false si no colisiona, per si colisiona devuelve true
+  return !(
+    a.y + a.h <= b.y ||
+    a.y >= b.y + b.h ||
+    a.x + a.w <= b.x ||
+    a.x >= b.x + b.w
+  );
+}
