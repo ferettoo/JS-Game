@@ -65,6 +65,7 @@ paper.forEach((trash) => {
 });
 
 //Creo la basura en pantalla
+
 batteries.forEach((trash) => {
   let newBatterie = document.createElement("div");
   newBatterie.style.left = trash.x + "px";
@@ -74,12 +75,27 @@ batteries.forEach((trash) => {
   newBatterie.style.position = "absolute";
   newBatterie.style.backgroundColor = "#ca6702";
   gameArea.el.appendChild(newBatterie);
+
+  // trash.forEach((x) => {
+  //   for (let i = 0; i < x.length; i++) {
+  //     if (collision(player, x[i])) {
+  //       gameArea.el.removeChild(newBatterie);
+  //       // var elementDeleted = x.splice(i, 1);
+  //       // elementDeleted.remove;
+
+  //       // console.log(elementDeleted);
+  //       //funcion de ganar puntos
+  //       //hacer desaparecer el div
+  //     }
+  //   }
+  // });
 });
 
 function hitTrash() {
   trash.forEach((x) => {
     for (let i = 0; i < x.length; i++) {
       if (collision(player, x[i])) {
+        gameArea.el.removeChild();
         var elementDeleted = x.splice(i, 1);
         elementDeleted.remove;
 
