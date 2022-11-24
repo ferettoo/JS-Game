@@ -3,35 +3,36 @@ import { player, collision } from "./player.js";
 export { trash, hitTrash };
 
 let glass = [
-  { x: 335, y: 30, w: 10, h: 10 },
-  { x: 690, y: 120, w: 10, h: 10 },
-  { x: 605, y: 30, w: 10, h: 10 },
+  { x: 335, y: 30, w: 10, h: 10, id: 1 },
+  { x: 690, y: 120, w: 10, h: 10, id: 2 },
+  { x: 605, y: 30, w: 10, h: 10, id: 3 },
 ];
 
 let batteries = [
-  { x: 675, y: 295, w: 10, h: 10 },
-  { x: 760, y: 500, w: 10, h: 10 },
-  { x: 510, y: 570, w: 10, h: 10 },
+  { x: 675, y: 295, w: 10, h: 10, id: 4 },
+  { x: 760, y: 500, w: 10, h: 10, id: 5 },
+  { x: 510, y: 570, w: 10, h: 10, id: 6 },
 ];
 
 let plastic = [
-  { x: 210, y: 570, w: 10, h: 10 },
-  { x: 160, y: 570, w: 10, h: 10 },
-  { x: 280, y: 390, w: 10, h: 10 },
-  { x: 30, y: 345, w: 10, h: 10 },
+  { x: 210, y: 570, w: 10, h: 10, id: 7 },
+  { x: 160, y: 570, w: 10, h: 10, id: 8 },
+  { x: 280, y: 390, w: 10, h: 10, id: 9 },
+  { x: 30, y: 345, w: 10, h: 10, id: 10 },
 ];
 
 let paper = [
-  { x: 265, y: 10, w: 10, h: 10 },
-  { x: 350, y: 295, w: 10, h: 10 },
-  { x: 420, y: 370, w: 10, h: 10 },
-  { x: 30, y: 165, w: 10, h: 10 },
+  { x: 265, y: 10, w: 10, h: 10, id: 11 },
+  { x: 350, y: 295, w: 10, h: 10, id: 12 },
+  { x: 420, y: 370, w: 10, h: 10, id: 13 },
+  { x: 30, y: 165, w: 10, h: 10, id: 14 },
 ];
 
 var trash = [glass, batteries, plastic, paper];
 
 glass.forEach((trash) => {
   let newItem = document.createElement("div");
+  newItem.id = trash.id;
   newItem.style.left = trash.x + "px";
   newItem.style.top = trash.y + "px";
   newItem.style.width = trash.w + "px";
@@ -44,6 +45,7 @@ glass.forEach((trash) => {
 
 plastic.forEach((trash) => {
   let newItem = document.createElement("div");
+  newItem.id = trash.id;
   newItem.style.left = trash.x + "px";
   newItem.style.top = trash.y + "px";
   newItem.style.width = trash.w + "px";
@@ -55,6 +57,7 @@ plastic.forEach((trash) => {
 
 paper.forEach((trash) => {
   let newItem = document.createElement("div");
+  newItem.id = trash.id;
   newItem.style.left = trash.x + "px";
   newItem.style.top = trash.y + "px";
   newItem.style.width = trash.w + "px";
@@ -68,6 +71,7 @@ paper.forEach((trash) => {
 
 batteries.forEach((trash) => {
   let newBatterie = document.createElement("div");
+  newBatterie.id = trash.id;
   newBatterie.style.left = trash.x + "px";
   newBatterie.style.top = trash.y + "px";
   newBatterie.style.width = trash.w + "px";
@@ -75,31 +79,16 @@ batteries.forEach((trash) => {
   newBatterie.style.position = "absolute";
   newBatterie.style.backgroundColor = "#ca6702";
   gameArea.el.appendChild(newBatterie);
-
-  // trash.forEach((x) => {
-  //   for (let i = 0; i < x.length; i++) {
-  //     if (collision(player, x[i])) {
-  //       gameArea.el.removeChild(newBatterie);
-  //       // var elementDeleted = x.splice(i, 1);
-  //       // elementDeleted.remove;
-
-  //       // console.log(elementDeleted);
-  //       //funcion de ganar puntos
-  //       //hacer desaparecer el div
-  //     }
-  //   }
-  // });
 });
 
 function hitTrash() {
   trash.forEach((x) => {
     for (let i = 0; i < x.length; i++) {
       if (collision(player, x[i])) {
-        gameArea.el.removeChild();
-        var elementDeleted = x.splice(i, 1);
-        elementDeleted.remove;
-
-        console.log(elementDeleted);
+        console.log(x[i].id);
+        const pick_trash = document.getElementById(x[i].id);
+        pick_trash.remove();
+        x.splice(i, 1);
         //funcion de ganar puntos
         //hacer desaparecer el div
       }
