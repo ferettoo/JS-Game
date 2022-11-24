@@ -2,6 +2,9 @@ import { gameArea } from "../js/gameArea.js";
 import { walls } from "../js/walls.js";
 import { trash } from "../js/trashItems.js";
 import { player } from "../js/player.js";
+import { createEnemy } from "../js/enemies.js";
+
+createEnemy();
 
 const newBatteries = [
   { x: 675, y: 295, w: 10, h: 10 },
