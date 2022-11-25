@@ -5,3 +5,7 @@ import { player } from "../js/player.js";
 import { createEnemy } from "../js/enemies.js";
 
 createEnemy();
+
+// setInterval(function () {
+//   console.log("1");
+// }, Infinity);
