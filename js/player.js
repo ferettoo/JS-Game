@@ -3,6 +3,7 @@ import { keysPressed } from "./movement.js";
 import { gameArea } from "./gameArea.js";
 import { walls } from "./walls.js";
 import { hitTrash } from "./trashItems.js";
+import { hitEnemy } from "./enemies.js";
 
 export { player, collision };
 
@@ -39,6 +40,7 @@ const player = {
       }
 
       hitTrash();
+      hitEnemy();
     },
     ArrowDown() {
       if (this.y + this.h < gameArea.h) {
@@ -57,6 +59,7 @@ const player = {
         }
       }
       hitTrash();
+      hitEnemy();
     },
     ArrowUp() {
       if (this.y > gameArea.y) {
@@ -76,6 +79,7 @@ const player = {
       }
 
       hitTrash();
+      hitEnemy();
     },
     ArrowRight() {
       if (this.x + this.w < gameArea.w) {
@@ -94,6 +98,7 @@ const player = {
         }
       }
       hitTrash();
+      hitEnemy();
     },
   },
 
