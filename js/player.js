@@ -97,6 +97,7 @@ const player = {
           this.x = walls[i].x - this.w;
         }
       }
+
       hitTrash();
       hitEnemy();
     },
