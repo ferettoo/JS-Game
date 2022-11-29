@@ -42,16 +42,4 @@ body {
 
 .enemies {
     background-color: rgb(233, 32, 25);
-    /* animation: movement 1s linear infinite; */
 }
-
-/* 
-@keyframes movement {
-    from {
-        top: 0px
-    }
-
-    to {
-        top: 130px
-    }
-} */

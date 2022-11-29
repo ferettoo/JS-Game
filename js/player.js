@@ -40,7 +40,6 @@ const player = {
       }
 
       hitTrash();
-      hitEnemy();
     },
     ArrowDown() {
       if (this.y + this.h < gameArea.h) {
@@ -59,7 +58,6 @@ const player = {
         }
       }
       hitTrash();
-      hitEnemy();
     },
     ArrowUp() {
       if (this.y > gameArea.y) {
@@ -79,7 +77,6 @@ const player = {
       }
 
       hitTrash();
-      hitEnemy();
     },
     ArrowRight() {
       if (this.x + this.w < gameArea.w) {
@@ -99,7 +96,6 @@ const player = {
       }
 
       hitTrash();
-      hitEnemy();
     },
   },
 
@@ -127,6 +123,7 @@ const player = {
   player.update(keysPressed);
   /*Le enviamos lo que queremos que modifique cada vez que nos movamos */
   player.render();
+  hitEnemy();
 })();
 
 //Colision Player con objetos del mapa
