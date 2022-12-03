@@ -5,5 +5,4 @@ import { player } from "../js/player.js";
 import { createEnemy, movementEnemy } from "../js/enemies.js";
 
 createEnemy();
-
 movementEnemy();

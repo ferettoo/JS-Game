@@ -42,6 +42,5 @@ walls.forEach((item) => {
   div.style.width = item.w + "px";
   div.style.height = item.h + "px";
   div.style.position = "absolute";
-  div.style.backgroundColor = "#646a63";
   gameArea.el.appendChild(div);
 });

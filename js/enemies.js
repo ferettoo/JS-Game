@@ -7,8 +7,8 @@ let allEnemies = [
   {
     x: 190,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy1",
     type: "vertical",
     pos: 75,
@@ -17,8 +17,8 @@ let allEnemies = [
   {
     x: 160,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy2",
     type: "vertical",
     pos: 75,
@@ -27,8 +27,8 @@ let allEnemies = [
   {
     x: 0,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy3",
     type: "round",
     posT: 350,
@@ -39,8 +39,8 @@ let allEnemies = [
   {
     x: 280,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy4",
     type: "vertical",
     pos: 120,
@@ -49,8 +49,8 @@ let allEnemies = [
   {
     x: 0,
     y: 280,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy5",
     type: "horizontal",
     pos: 150,
@@ -59,8 +59,8 @@ let allEnemies = [
   {
     x: 0,
     y: 310,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy6",
     type: "horizontal",
     pos: 150,
@@ -69,8 +69,8 @@ let allEnemies = [
   {
     x: 240,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy7",
     type: "vertical",
     pos: 387,
@@ -79,8 +79,8 @@ let allEnemies = [
   {
     x: 0,
     y: 460,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy8",
     type: "horizontal",
     pos: 150,
@@ -89,8 +89,8 @@ let allEnemies = [
   {
     x: 0,
     y: 490,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy9",
     type: "horizontal",
     pos: 150,
@@ -99,8 +99,8 @@ let allEnemies = [
   {
     x: 120,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy10",
     type: "vertical",
     pos: 567,
@@ -109,8 +109,8 @@ let allEnemies = [
   {
     x: 245,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy11",
     type: "vertical",
     pos: 120,
@@ -119,8 +119,8 @@ let allEnemies = [
   {
     x: 335,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy12",
     type: "vertical",
     pos: 170,
@@ -129,8 +129,8 @@ let allEnemies = [
   {
     x: 365,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy13",
     type: "vertical",
     pos: 170,
@@ -139,8 +139,8 @@ let allEnemies = [
   {
     x: 0,
     y: 310,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy14",
     type: "horizontal",
     pos: 500,
@@ -149,8 +149,8 @@ let allEnemies = [
   {
     x: 0,
     y: 280,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy15",
     type: "horizontal",
     pos: 500,
@@ -159,8 +159,8 @@ let allEnemies = [
   {
     x: 0,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy16",
     type: "round",
     posT: 550,
@@ -171,8 +171,8 @@ let allEnemies = [
   {
     x: 515,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy17",
     type: "vertical",
     pos: 120,
@@ -181,8 +181,8 @@ let allEnemies = [
   {
     x: 545,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy18",
     type: "vertical",
     pos: 120,
@@ -191,8 +191,8 @@ let allEnemies = [
   {
     x: 400,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy19",
     type: "vertical",
     pos: 30,
@@ -201,8 +201,8 @@ let allEnemies = [
   {
     x: 240,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy20",
     type: "vertical",
     pos: 567,
@@ -211,8 +211,8 @@ let allEnemies = [
   {
     x: 392,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy21",
     type: "vertical",
     pos: 567,
@@ -221,8 +221,8 @@ let allEnemies = [
   {
     x: 0,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy22",
     type: "round",
     posT: 627,
@@ -233,8 +233,8 @@ let allEnemies = [
   {
     x: 0,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy23",
     type: "round",
     posT: 757,
@@ -245,8 +245,8 @@ let allEnemies = [
   {
     x: 0,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy24",
     type: "round",
     posT: 350,
@@ -257,8 +257,8 @@ let allEnemies = [
   {
     x: 0,
     y: 0,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy25",
     type: "round",
     posT: 550,
@@ -269,8 +269,8 @@ let allEnemies = [
   {
     x: 0,
     y: 342,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy26",
     type: "horizontal",
     pos: 755,
@@ -279,8 +279,8 @@ let allEnemies = [
   {
     x: 0,
     y: 432,
-    w: 15,
-    h: 15,
+    w: 13,
+    h: 13,
     id: "enemy27",
     type: "horizontal",
     pos: 755,
@@ -300,6 +300,9 @@ function createEnemy() {
     newEnemy.style.height = enemy.h + "px";
     newEnemy.style.position = "absolute";
     newEnemy.style.backgroundColor = "red";
+    // newEnemy.style.backgroundImage = "url('../media/car1.png')";
+    // newEnemy.style.backgroundSize = "10px ";
+    // newEnemy.style.backgroundRepeat = "no-repeat";
     gameArea.el.appendChild(newEnemy);
   });
 }
@@ -324,12 +327,14 @@ function movementEnemy(t1) {
   for (let i = 0; i < allEnemies.length; i++) {
     let posT, posL;
     switch (allEnemies[i].type) {
+      // Vertical enemies
       case "vertical":
         const enemyV0 = document.getElementById(allEnemies[i].id);
         posT = allEnemies[i].pos + Math.sin(t1 / 300) * allEnemies[i].vel;
         enemyV0.style.top = posT + "px";
         allEnemies[i].y = posT;
         break;
+      //Round enemies
       case "round":
         const enemyC = document.getElementById(allEnemies[i].id);
         posT = allEnemies[i].posT + Math.cos(t1 / 300) * allEnemies[i].velT;
@@ -339,6 +344,7 @@ function movementEnemy(t1) {
         allEnemies[i].y = posL;
         allEnemies[i].x = posT;
         break;
+      // Horizontal enemies
       case "horizontal":
         const enemyH0 = document.getElementById(allEnemies[i].id);
         posL = allEnemies[i].pos + Math.cos(t1 / 300) * allEnemies[i].vel;

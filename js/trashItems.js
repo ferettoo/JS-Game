@@ -3,29 +3,29 @@ import { player, collision } from "./player.js";
 export { trash, hitTrash };
 
 let glass = [
-  { x: 335, y: 30, w: 10, h: 10, id: 1 },
-  { x: 690, y: 120, w: 10, h: 10, id: 2 },
-  { x: 605, y: 30, w: 10, h: 10, id: 3 },
+  { x: 336, y: 20, w: 30, h: 30, id: 1 },
+  { x: 685, y: 105, w: 30, h: 30, id: 2 },
+  { x: 610, y: 20, w: 30, h: 30, id: 3 },
 ];
 
 let batteries = [
-  { x: 675, y: 295, w: 10, h: 10, id: 4 },
-  { x: 760, y: 500, w: 10, h: 10, id: 5 },
-  { x: 510, y: 570, w: 10, h: 10, id: 6 },
+  { x: 675, y: 285, w: 30, h: 30, id: 4 },
+  { x: 750, y: 470, w: 30, h: 30, id: 5 },
+  { x: 515, y: 565, w: 30, h: 30, id: 6 },
 ];
 
 let plastic = [
-  { x: 210, y: 570, w: 10, h: 10, id: 7 },
-  { x: 160, y: 570, w: 10, h: 10, id: 8 },
-  { x: 280, y: 390, w: 10, h: 10, id: 9 },
-  { x: 30, y: 345, w: 10, h: 10, id: 10 },
+  { x: 210, y: 560, w: 30, h: 30, id: 7 },
+  { x: 145, y: 560, w: 30, h: 30, id: 8 },
+  { x: 260, y: 380, w: 30, h: 30, id: 9 },
+  { x: 25, y: 335, w: 30, h: 30, id: 10 },
 ];
 
 let paper = [
-  { x: 265, y: 10, w: 10, h: 10, id: 11 },
-  { x: 350, y: 300, w: 10, h: 10, id: 12 },
-  { x: 420, y: 370, w: 10, h: 10, id: 13 },
-  { x: 30, y: 165, w: 10, h: 10, id: 14 },
+  { x: 253, y: 10, w: 30, h: 30, id: 11 },
+  { x: 343, y: 295, w: 30, h: 30, id: 12 },
+  { x: 420, y: 370, w: 30, h: 30, id: 13 },
+  { x: 22, y: 160, w: 30, h: 30, id: 14 },
 ];
 
 var trash = [glass, batteries, plastic, paper];
@@ -38,9 +38,10 @@ glass.forEach((trash) => {
   newItem.style.width = trash.w + "px";
   newItem.style.height = trash.h + "px";
   newItem.style.position = "absolute";
-  newItem.style.backgroundColor = "green";
+  newItem.style.backgroundImage = "url('../media/glass.png')";
+  newItem.style.backgroundSize = "contain";
+  newItem.style.backgroundRepeat = "no-repeat";
   gameArea.el.appendChild(newItem);
-  newItem.remove;
 });
 
 plastic.forEach((trash) => {
@@ -51,7 +52,9 @@ plastic.forEach((trash) => {
   newItem.style.width = trash.w + "px";
   newItem.style.height = trash.h + "px";
   newItem.style.position = "absolute";
-  newItem.style.backgroundColor = "#fdc500";
+  newItem.style.backgroundImage = "url('../media/plastic.png')";
+  newItem.style.backgroundSize = "contain";
+  newItem.style.backgroundRepeat = "no-repeat";
   gameArea.el.appendChild(newItem);
 });
 
@@ -63,22 +66,26 @@ paper.forEach((trash) => {
   newItem.style.width = trash.w + "px";
   newItem.style.height = trash.h + "px";
   newItem.style.position = "absolute";
-  newItem.style.backgroundColor = "#003566";
+  newItem.style.backgroundImage = "url('../media/paper.png')";
+  newItem.style.backgroundSize = "contain";
+  newItem.style.backgroundRepeat = "no-repeat";
   gameArea.el.appendChild(newItem);
 });
 
 //Creo la basura en pantalla
 
 batteries.forEach((trash) => {
-  let newBatterie = document.createElement("div");
-  newBatterie.id = trash.id;
-  newBatterie.style.left = trash.x + "px";
-  newBatterie.style.top = trash.y + "px";
-  newBatterie.style.width = trash.w + "px";
-  newBatterie.style.height = trash.h + "px";
-  newBatterie.style.position = "absolute";
-  newBatterie.style.backgroundColor = "#ca6702";
-  gameArea.el.appendChild(newBatterie);
+  let newItem = document.createElement("div");
+  newItem.id = trash.id;
+  newItem.style.left = trash.x + "px";
+  newItem.style.top = trash.y + "px";
+  newItem.style.width = trash.w + "px";
+  newItem.style.height = trash.h + "px";
+  newItem.style.position = "absolute";
+  newItem.style.backgroundImage = "url('../media/batteries.png')";
+  newItem.style.backgroundSize = "contain";
+  newItem.style.backgroundRepeat = "no-repeat";
+  gameArea.el.appendChild(newItem);
 });
 
 function hitTrash() {
