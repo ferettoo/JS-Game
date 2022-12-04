@@ -1,28 +1,28 @@
 import { gameArea } from "./gameArea.js";
 import { player, collision } from "./player.js";
 
-export { createEnemy, hitEnemy, movementEnemy };
+export { createEnemy, hitEnemy };
 
 let allEnemies = [
   {
     x: 190,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 33,
     id: "enemy1",
     type: "vertical",
-    pos: 75,
-    vel: 60,
+    pos: 60,
+    vel: 50,
   },
   {
     x: 160,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 33,
     id: "enemy2",
     type: "vertical",
-    pos: 75,
-    vel: -60,
+    pos: 60,
+    vel: -50,
   },
   {
     x: 0,
@@ -39,48 +39,48 @@ let allEnemies = [
   {
     x: 280,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 33,
     id: "enemy4",
     type: "vertical",
-    pos: 120,
-    vel: 100,
+    pos: 105,
+    vel: 90,
   },
   {
     x: 0,
     y: 280,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy5",
     type: "horizontal",
-    pos: 150,
-    vel: 130,
+    pos: 130,
+    vel: 115,
   },
   {
     x: 0,
     y: 310,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy6",
     type: "horizontal",
-    pos: 150,
-    vel: -130,
+    pos: 130,
+    vel: -115,
   },
   {
     x: 240,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 20,
     id: "enemy7",
     type: "vertical",
-    pos: 387,
-    vel: -20,
+    pos: 385,
+    vel: -15,
   },
   {
     x: 0,
     y: 460,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy8",
     type: "horizontal",
     pos: 150,
@@ -89,8 +89,8 @@ let allEnemies = [
   {
     x: 0,
     y: 490,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy9",
     type: "horizontal",
     pos: 150,
@@ -99,62 +99,42 @@ let allEnemies = [
   {
     x: 120,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 20,
     id: "enemy10",
     type: "vertical",
     pos: 567,
-    vel: -20,
+    vel: -15,
   },
   {
     x: 245,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 33,
     id: "enemy11",
     type: "vertical",
-    pos: 120,
-    vel: -100,
-  },
-  {
-    x: 335,
-    y: 0,
-    w: 13,
-    h: 13,
-    id: "enemy12",
-    type: "vertical",
-    pos: 170,
-    vel: 60,
-  },
-  {
-    x: 365,
-    y: 0,
-    w: 13,
-    h: 13,
-    id: "enemy13",
-    type: "vertical",
-    pos: 170,
-    vel: -60,
+    pos: 105,
+    vel: -90,
   },
   {
     x: 0,
     y: 310,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy14",
     type: "horizontal",
     pos: 500,
-    vel: 100,
+    vel: 90,
   },
   {
     x: 0,
     y: 280,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy15",
     type: "horizontal",
     pos: 500,
-    vel: -100,
+    vel: -90,
   },
   {
     x: 0,
@@ -171,52 +151,52 @@ let allEnemies = [
   {
     x: 515,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 33,
     id: "enemy17",
     type: "vertical",
-    pos: 120,
-    vel: -100,
+    pos: 110,
+    vel: -90,
   },
   {
     x: 545,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 33,
     id: "enemy18",
     type: "vertical",
-    pos: 120,
-    vel: 100,
+    pos: 110,
+    vel: 90,
   },
   {
     x: 400,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 20,
     id: "enemy19",
     type: "vertical",
-    pos: 30,
-    vel: -20,
+    pos: 26,
+    vel: -16,
   },
   {
     x: 240,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 20,
     id: "enemy20",
     type: "vertical",
     pos: 567,
-    vel: -20,
+    vel: -15,
   },
   {
     x: 392,
     y: 0,
-    w: 13,
-    h: 13,
+    w: 15,
+    h: 20,
     id: "enemy21",
     type: "vertical",
     pos: 567,
-    vel: -20,
+    vel: -15,
   },
   {
     x: 0,
@@ -269,8 +249,8 @@ let allEnemies = [
   {
     x: 0,
     y: 342,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy26",
     type: "horizontal",
     pos: 755,
@@ -279,8 +259,8 @@ let allEnemies = [
   {
     x: 0,
     y: 432,
-    w: 13,
-    h: 13,
+    w: 30,
+    h: 21,
     id: "enemy27",
     type: "horizontal",
     pos: 755,
@@ -291,18 +271,28 @@ let allEnemies = [
 //Creamos a todos los enemigos del Array allEnemies[]
 function createEnemy() {
   allEnemies.forEach((enemy) => {
+    // console.log(enemy.type);
     let newEnemy = document.createElement("div");
     newEnemy.id = enemy.id;
-    // newEnemy.classList.add("enemies");
     newEnemy.style.left = enemy.x + "px";
     newEnemy.style.top = enemy.y + "px";
     newEnemy.style.width = enemy.w + "px";
     newEnemy.style.height = enemy.h + "px";
     newEnemy.style.position = "absolute";
-    newEnemy.style.backgroundColor = "red";
-    // newEnemy.style.backgroundImage = "url('../media/car1.png')";
-    // newEnemy.style.backgroundSize = "10px ";
-    // newEnemy.style.backgroundRepeat = "no-repeat";
+    switch (enemy.type) {
+      case "vertical":
+        newEnemy.style.backgroundImage = "url('../media/car1.png')";
+        break;
+      case "horizontal":
+        // newEnemy.style.backgroundColor = "green";
+        newEnemy.style.backgroundImage = "url('../media/car2.png')";
+        break;
+      case "round":
+        newEnemy.style.backgroundColor = "blue";
+        break;
+    }
+    newEnemy.style.backgroundSize = "contain";
+    newEnemy.style.backgroundRepeat = "no-repeat";
     gameArea.el.appendChild(newEnemy);
   });
 }
@@ -313,14 +303,12 @@ function hitEnemy() {
     if (collision(player, allEnemies[i])) {
       // const enemy = document.getElementById(allEnemies[i].id);
       console.log("hit");
-      //Hacer hit cuando el enemigo de al jugador no al reves
     }
   }
 }
 
 //movement Enemy : https://jsfiddle.net/qu2Dc/2/
 window.requestAnimationFrame(movementEnemy);
-//Remplazar los switchers con objetos literales, para mejor lectura de codigo
 
 //Creamos las animaciones de los enemigos, modificando tambien las hitbox
 function movementEnemy(t1) {
