@@ -11,9 +11,9 @@ const player = {
   el: document.querySelector("#player"),
   w: document.querySelector("#player").offsetWidth,
   h: document.querySelector("#player").offsetHeight,
-  x: 0,
-  y: 0,
-  speed: 2,
+  x: 25,
+  y: 18,
+  speed: 1.8,
 
   /* Cada vez que se mueve aplica esta funcion */
   render() {

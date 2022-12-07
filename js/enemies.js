@@ -1,6 +1,6 @@
 import { gameArea } from "./gameArea.js";
+import { allLives } from "./interface.js";
 import { player, collision } from "./player.js";
-
 export { createEnemy, hitEnemy };
 
 let allEnemies = [
@@ -253,7 +253,7 @@ let allEnemies = [
     h: 21,
     id: "enemy26",
     type: "horizontal",
-    pos: 755,
+    pos: 750,
     vel: 20,
   },
   {
@@ -263,7 +263,7 @@ let allEnemies = [
     h: 21,
     id: "enemy27",
     type: "horizontal",
-    pos: 755,
+    pos: 750,
     vel: 20,
   },
 ];
@@ -288,7 +288,8 @@ function createEnemy() {
         newEnemy.style.backgroundImage = "url('../media/car2.png')";
         break;
       case "round":
-        newEnemy.style.backgroundColor = "blue";
+        // newEnemy.style.backgroundColor = "blue";
+        newEnemy.style.backgroundImage = "url('../media/ball.png')";
         break;
     }
     newEnemy.style.backgroundSize = "contain";
@@ -299,10 +300,15 @@ function createEnemy() {
 
 //Creamos la colision con el jugador
 function hitEnemy() {
+  // let contador = 1;
   for (let i = 0; i < allEnemies.length; i++) {
     if (collision(player, allEnemies[i])) {
-      // const enemy = document.getElementById(allEnemies[i].id);
-      console.log("hit");
+      //Reinicia al jugador cada vez que le da un enemigo.
+      player.x = 25;
+      player.y = 18;
+      //Tener un maximo de puntos, y si le da el enemigo al personaje restar-le puntos,
+      //cunado consiga algun item en pantalla sumarle puntos, puede superar los puntos
+      //ya dados.
     }
   }
 }

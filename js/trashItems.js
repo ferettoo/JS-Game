@@ -1,5 +1,6 @@
 import { gameArea } from "./gameArea.js";
 import { player, collision } from "./player.js";
+
 export { trash, hitTrash };
 
 let glass = [
@@ -93,8 +94,9 @@ function hitTrash() {
     for (let i = 0; i < x.length; i++) {
       if (collision(player, x[i])) {
         console.log(x[i].id);
-        const pick_trash = document.getElementById(x[i].id);
-        pick_trash.remove();
+        const pickTrash = document.getElementById(x[i].id);
+        console.log(pickTrash);
+        pickTrash.remove();
         x.splice(i, 1);
         //funcion de ganar puntos
       }

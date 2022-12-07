@@ -11,17 +11,30 @@ html {
 
 body {
     background-color: #788DA9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     height: 100vh;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#interfaceGame {
+    position: relative;
+    background-color: rgb(201, 245, 245);
+    border-radius: 15px 15px 0px 0px;
+    background-image: url('../media/hud.png');
+    height: 50px;
+    width: 800px;
 }
 
 #gameArea {
     position: relative;
     width: 800px;
     height: 610px;
-    background-color: aliceblue;
     background-image: url('../media/background.png');
 }
 
@@ -29,7 +42,6 @@ body {
     position: absolute;
     width: 18px;
     height: 25px;
-    /* background-color: aqua; */
     background-image: url('../media/Walk.gif');
     background-size: 25px;
     background-repeat: no-repeat;
