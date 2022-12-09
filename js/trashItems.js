@@ -1,4 +1,5 @@
 import { gameArea } from "./gameArea.js";
+// import { showPointsInterface, points } from "./interface.js";
 import { player, collision } from "./player.js";
 
 export { trash, hitTrash };
@@ -95,10 +96,12 @@ function hitTrash() {
       if (collision(player, x[i])) {
         console.log(x[i].id);
         const pickTrash = document.getElementById(x[i].id);
-        console.log(pickTrash);
         pickTrash.remove();
         x.splice(i, 1);
         //funcion de ganar puntos
+
+        // points += 50;
+        // showPointsInterface(points);
       }
     }
   });

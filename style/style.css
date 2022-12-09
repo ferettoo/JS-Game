@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 html {
     box-sizing: border-box;
     /* Suma los valores de height, margin o border al objeto*/
@@ -24,11 +26,22 @@ body {
 
 #interfaceGame {
     position: relative;
-    background-color: rgb(201, 245, 245);
     border-radius: 15px 15px 0px 0px;
     background-image: url('../media/hud.png');
     height: 50px;
     width: 800px;
+    text-align: center;
+}
+
+#interfaceGame p {
+    position: relative;
+    margin: auto;
+    padding-top: 13px;
+    font-size: larger;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 200, 0);
+    text-shadow: 0px 0px 6px rgb(0, 0, 0);
+
 }
 
 #gameArea {

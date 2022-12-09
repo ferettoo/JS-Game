@@ -6,7 +6,6 @@ import { hitTrash } from "./trashItems.js";
 import { hitEnemy } from "./enemies.js";
 
 export { player, collision };
-
 const player = {
   el: document.querySelector("#player"),
   w: document.querySelector("#player").offsetWidth,
@@ -14,6 +13,7 @@ const player = {
   x: 25,
   y: 18,
   speed: 1.8,
+  points: 500,
 
   /* Cada vez que se mueve aplica esta funcion */
   render() {
