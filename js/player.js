@@ -123,6 +123,7 @@ const player = {
   player.update(keysPressed);
   /*Le enviamos lo que queremos que modifique cada vez que nos movamos */
   player.render();
+
   hitEnemy();
 })();
 

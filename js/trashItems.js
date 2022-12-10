@@ -1,5 +1,5 @@
 import { gameArea } from "./gameArea.js";
-// import { showPointsInterface, points } from "./interface.js";
+import { interfaceGame, showInterface } from "./interface.js";
 import { player, collision } from "./player.js";
 
 export { trash, hitTrash };
@@ -98,25 +98,9 @@ function hitTrash() {
         const pickTrash = document.getElementById(x[i].id);
         pickTrash.remove();
         x.splice(i, 1);
-        //funcion de ganar puntos
-
-        // points += 50;
-        // showPointsInterface(points);
+        interfaceGame.points += 25;
+        showInterface();
       }
     }
   });
 }
-
-// const newBatteries = [
-//   { x: 675, y: 295, w: 10, h: 10 },
-//   { x: 760, y: 500, w: 10, h: 10 },
-//   { x: 510, y: 570, w: 10, h: 10 },
-// ].map((items) => {
-//   let newItem = document.createElement("div"); // p tag might be better suited for trash
-//   newItem.textContent = items; // for items only, use textContent
-//   return newItem;
-// });
-
-// console.log(trash);
-
-// // document.body.append(trash); // append all in one function call

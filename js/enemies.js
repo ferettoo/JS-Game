@@ -1,7 +1,7 @@
 import { gameArea } from "./gameArea.js";
-// import { showPointsInterface } from "./interface.js";
+import { interfaceGame, showInterface } from "./interface.js";
 import { player, collision } from "./player.js";
-export { createEnemy, hitEnemy };
+export { createEnemy, hitEnemy, allEnemies };
 
 let allEnemies = [
   {
@@ -268,8 +268,6 @@ let allEnemies = [
   },
 ];
 
-var points = 500;
-
 //Creamos a todos los enemigos del Array allEnemies[]
 function createEnemy() {
   allEnemies.forEach((enemy) => {
@@ -300,13 +298,14 @@ function createEnemy() {
 //Creamos la colision con el jugador
 function hitEnemy() {
   for (let i = 0; i < allEnemies.length; i++) {
+    // console.log(collision(player, allEnemies[i]));
     if (collision(player, allEnemies[i])) {
       //Reinicia al jugador cada vez que le da un enemigo.
       player.x = 25;
       player.y = 18;
-      //Resta puntos al jugador.
-      // points -= 50;
-      // showPointsInterface(points);
+      //Restar puntos
+      interfaceGame.points -= 50;
+      showInterface();
     }
   }
 }

@@ -1,17 +1,18 @@
-// export { showPointsInterface, points };
+export { interfaceGame, showInterface };
 
-let points = 500; // Para la primero impresión
+let interfaceGame = {
+  interface: document.querySelector("#interfaceGame"),
+  interfacePoints: document.createElement("p"),
+  points: 500,
+};
 
-let interfaceGame = document.querySelector("#interfaceGame");
+function showInterface() {
+  interfaceGame.interfacePoints.innerText = "Score: " + interfaceGame.points;
+  interfaceGame.interface.appendChild(interfaceGame.interfacePoints);
 
-const showPoints = document.createElement("p");
+  if (interfaceGame.points <= 0) {
+    console.log("You lose");
+  }
+}
 
-showPoints.innerText = "Score: " + points;
-
-interfaceGame.appendChild(showPoints);
-
-//Muestra en la interfaz el Score
-// function showPointsInterface(points) {
-//   showPoints.innerText = "Score: " + points;
-//   interfaceGame.appendChild(showPoints);
-// }
+showInterface();
