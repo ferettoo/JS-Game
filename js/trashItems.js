@@ -94,7 +94,6 @@ function hitTrash() {
   trash.forEach((x) => {
     for (let i = 0; i < x.length; i++) {
       if (collision(player, x[i])) {
-        console.log(x[i].id);
         const pickTrash = document.getElementById(x[i].id);
         pickTrash.remove();
         x.splice(i, 1);

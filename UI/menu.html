@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Game</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- MENU -->
+        <div id="menu">
+            <div id="playGame">
+                <button type="button" value="JUEGO" onclick="gamePage()" class="btn" role="button">JUEGA</button>
+            </div>
+            <div id="instructions">
+                <button type="button" value="JUEGO" onclick="instructionsPage()" class="btn"
+                    role="button">TUTORIAL</button>
+            </div>
+            <div id="return">
+                <!-- Poner pagina de la lading page -->
+                <button type="button" value="JUEGO" class="btn" role="button"><a href="">SALIR</a></button>
+                </di v>
+            </div>
+        </div>
+        <script>
+            function gamePage() {
+                window.location.href = "./game.html";
+            }
+
+            function instructionsPage() {
+                window.location.href = "./instructions.html";
+            }
+        </script>
+</body>
+<script src="./app.js" type="module"></script>
+
+</html>

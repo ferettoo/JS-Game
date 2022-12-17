@@ -32,6 +32,7 @@ let walls = [
   { x: 645, y: 270, w: 20, h: 70 },
   { x: 670, y: 520, w: 130, h: 20 },
   { x: 710, y: 430, w: 20, h: 90 },
+  { x: 755, y: 547, w: 42, h: 60, id: "goal" },
 ];
 
 //Show Walls
@@ -43,4 +44,11 @@ walls.forEach((item) => {
   div.style.height = item.h + "px";
   div.style.position = "absolute";
   gameArea.el.appendChild(div);
+
+  if (item.id == "goal") {
+    // div.style.backgroundColor = "red";
+    div.style.backgroundImage = "url('../media/recycleContainer.png')";
+    div.style.backgroundSize = "contain";
+    div.style.backgroundRepeat = "no-repeat";
+  }
 });

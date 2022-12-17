@@ -1,7 +1,7 @@
 import { gameArea } from "./gameArea.js";
 import { interfaceGame, showInterface } from "./interface.js";
 import { player, collision } from "./player.js";
-export { createEnemy, hitEnemy, allEnemies };
+export { hitEnemy, allEnemies };
 
 let allEnemies = [
   {
@@ -269,31 +269,32 @@ let allEnemies = [
 ];
 
 //Creamos a todos los enemigos del Array allEnemies[]
-function createEnemy() {
-  allEnemies.forEach((enemy) => {
-    let newEnemy = document.createElement("div");
-    newEnemy.id = enemy.id;
-    newEnemy.style.left = enemy.x + "px";
-    newEnemy.style.top = enemy.y + "px";
-    newEnemy.style.width = enemy.w + "px";
-    newEnemy.style.height = enemy.h + "px";
-    newEnemy.style.position = "absolute";
-    switch (enemy.type) {
-      case "vertical":
-        newEnemy.style.backgroundImage = "url('../media/car1.png')";
-        break;
-      case "horizontal":
-        newEnemy.style.backgroundImage = "url('../media/car2.png')";
-        break;
-      case "round":
-        newEnemy.style.backgroundImage = "url('../media/ball.png')";
-        break;
-    }
-    newEnemy.style.backgroundSize = "contain";
-    newEnemy.style.backgroundRepeat = "no-repeat";
-    gameArea.el.appendChild(newEnemy);
-  });
-}
+// function createEnemy() {
+
+// }
+allEnemies.forEach((enemy) => {
+  let newEnemy = document.createElement("div");
+  newEnemy.id = enemy.id;
+  newEnemy.style.left = enemy.x + "px";
+  newEnemy.style.top = enemy.y + "px";
+  newEnemy.style.width = enemy.w + "px";
+  newEnemy.style.height = enemy.h + "px";
+  newEnemy.style.position = "absolute";
+  switch (enemy.type) {
+    case "vertical":
+      newEnemy.style.backgroundImage = "url('../media/car1.png')";
+      break;
+    case "horizontal":
+      newEnemy.style.backgroundImage = "url('../media/car2.png')";
+      break;
+    case "round":
+      newEnemy.style.backgroundImage = "url('../media/ball.png')";
+      break;
+  }
+  newEnemy.style.backgroundSize = "contain";
+  newEnemy.style.backgroundRepeat = "no-repeat";
+  gameArea.el.appendChild(newEnemy);
+});
 
 //Creamos la colision con el jugador
 function hitEnemy() {

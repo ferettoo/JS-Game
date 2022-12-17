@@ -24,8 +24,37 @@ body {
     transform: translate(-50%, -50%);
 }
 
-#interfaceGame {
+#menu {
+    display: flex;
     position: relative;
+    border-radius: 15px 15px 0px 0px;
+    height: 660px;
+    width: 800px;
+    background-color: rgb(58, 136, 87);
+    background-image: url('../media/menuFondo.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#menu>div>button>a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+#playGame,
+#instructions,
+#return {
+    padding: 30px;
+}
+
+#interfaceGame {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     border-radius: 15px 15px 0px 0px;
     background-image: url('../media/hud.png');
     height: 50px;
@@ -33,16 +62,26 @@ body {
     text-align: center;
 }
 
-#interfaceGame p {
+#temps {
     position: relative;
-    margin: auto;
-    padding-top: 13px;
     font-size: larger;
     font-family: 'Montserrat', sans-serif;
     color: rgb(255, 200, 0);
     text-shadow: 0px 0px 6px rgb(0, 0, 0);
-
 }
+
+#interfaceGame>a,
+h2,
+p {
+    text-decoration: none;
+    position: relative;
+    font-size: larger;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 200, 0);
+    text-shadow: 0px 0px 6px rgb(0, 0, 0);
+    z-index: 100;
+}
+
 
 #gameArea {
     position: relative;
@@ -59,4 +98,31 @@ body {
     background-size: 25px;
     background-repeat: no-repeat;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* button */
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        padding: 0.25em 0.75em;
+    }
 }

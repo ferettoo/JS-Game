@@ -4,6 +4,7 @@ import { gameArea } from "./gameArea.js";
 import { walls } from "./walls.js";
 import { hitTrash } from "./trashItems.js";
 import { hitEnemy } from "./enemies.js";
+import { showInterface, showWin } from "./interface.js";
 
 export { player, collision };
 const player = {
@@ -14,13 +15,13 @@ const player = {
   y: 18,
   speed: 1.8,
   points: 500,
+  goalHit: false,
 
   /* Cada vez que se mueve aplica esta funcion */
   render() {
     this.el.style.left = player.x + "px";
     this.el.style.top = player.y + "px";
   },
-
   move: {
     ArrowLeft() {
       if (this.x > gameArea.x) {
@@ -92,9 +93,14 @@ const player = {
       for (let i = 0; i < walls.length; i++) {
         if (collision(player, walls[i])) {
           this.x = walls[i].x - this.w;
+          if (walls[i].id == "goal") {
+            if (this.goalHit == false) {
+              showWin();
+              this.goalHit = true;
+            }
+          }
         }
       }
-
       hitTrash();
     },
   },
@@ -123,7 +129,6 @@ const player = {
   player.update(keysPressed);
   /*Le enviamos lo que queremos que modifique cada vez que nos movamos */
   player.render();
-
   hitEnemy();
 })();
 
