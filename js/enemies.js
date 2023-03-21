@@ -329,6 +329,7 @@ function movementEnemy(t1) {
       //Round enemies
       case "round":
         const enemyC = document.getElementById(allEnemies[i].id);
+        console.log(t1);
         posT = allEnemies[i].posT + Math.cos(t1 / 300) * allEnemies[i].velT;
         posL = allEnemies[i].posL + Math.sin(t1 / 300) * allEnemies[i].velL;
         enemyC.style.left = posT + "px";
